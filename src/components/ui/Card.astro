@@ -1,0 +1,19 @@
+---
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  link: string;
+}
+
+import { Image } from "astro:assets";
+const { src, alt, link } = Astro.props;
+---
+
+<a href={link} target="_blank">
+  <Image
+    loading={"eager"}
+    class="rounded-xl border-2 border-[#1C191C] xs:w-full md:w-4/5 m-auto hover:opacity-40 duration-100"
+    src={src}
+    alt={alt}
+  />
+</a>
